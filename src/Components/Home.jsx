@@ -1,14 +1,32 @@
+import Button from "@mui/material/Button";
 import home from "../assets/home.mp4";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 
 const Home = ({ onContactClick = () => {} }) => {
     return (
         <section
-            className="relative isolate min-h-screen w-full overflow-hidden bg-[#0F1418] text-[#E6E4DF]"
+            className="
+                relative
+                isolate
+                min-h-screen
+                w-full
+                overflow-hidden
+                bg-[#0F1418]
+                text-[#E6E4DF]
+            "
             style={{ fontFamily: "'Manrope', sans-serif" }}
         >
-            {/* Background video */}
+
+            {/* ================= BACKGROUND VIDEO ================= */}
             <video
-                className="absolute inset-0 -z-20 h-full w-full object-cover"
+                className="
+                    absolute
+                    inset-0
+                    -z-20
+                    h-full
+                    w-full
+                    object-cover
+                "
                 src={home}
                 autoPlay
                 loop
@@ -16,10 +34,12 @@ const Home = ({ onContactClick = () => {} }) => {
                 playsInline
             />
 
-            {/* Overlay */}
+            {/* ================= VIDEO OVERLAY ================= */}
             <div
                 className="
-                    absolute inset-0 -z-10
+                    absolute
+                    inset-0
+                    -z-10
                     bg-[linear-gradient(
                         to_bottom,
                         rgba(15,20,24,0.6),
@@ -30,7 +50,7 @@ const Home = ({ onContactClick = () => {} }) => {
                 "
             />
 
-            {/* 40% Hero Area */}
+            {/* ================= HERO AREA ================= */}
             <div
                 className="
                     mx-auto
@@ -39,106 +59,235 @@ const Home = ({ onContactClick = () => {} }) => {
                     w-full
                     flex-col
                     items-center
-                    px-4
+                    px-3
                     pt-5
 
+                    sm:px-4
                     sm:pt-6
+
                     md:pt-8
+
                     lg:pt-[5vh]
                 "
             >
-                {/* Header */}
+
+                {/* ================= HEADER ================= */}
                 <header
                     className="
                         flex
-                        w-[92%]
+                        h-14
+                        w-[96%]
                         shrink-0
-                        items-center
+                        items-stretch
                         justify-between
+                        overflow-hidden
                         rounded-xl
-                        border border-white/20
+                        border
+                        border-white/20
                         bg-[#0F1418]/45
-                        px-4 py-3
                         shadow-[0_10px_40px_rgba(0,0,0,0.35)]
                         backdrop-blur-md
 
+                        sm:h-16
                         sm:w-[90%]
-                        sm:px-5 sm:py-3
 
+                        md:h-20
                         md:w-[88%]
-                        md:px-6 md:py-4
 
+                        lg:h-24
                         lg:w-[80%]
                         lg:rounded-2xl
                     "
                 >
-                    {/* Logo + Company Name */}
-                    <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+
+                    {/* ================= TEXT LOGO ================= */}
+                    <div
+                        className="
+                            flex
+                            h-full
+                            w-[25%]
+                            shrink-0
+                            flex-col
+                            justify-center
+                            px-2
+
+                            sm:w-[23%]
+                            sm:px-3
+
+                            md:w-[22%]
+
+                            lg:w-[20%]
+                        "
+                    >
+
+                        {/* SRIMAN */}
                         <div
                             className="
-                                flex h-10 w-10
-                                shrink-0
-                                items-center justify-center
-                                rounded-lg
-                                bg-[#E6E4DF]
-                                p-1.5
+                                whitespace-nowrap
+                                text-[20px]
+                                font-extrabold
+                                leading-[0.85]
+                                tracking-[-0.08em]
 
-                                sm:h-12 sm:w-12
-                                sm:rounded-xl
-                                sm:p-2
+                                min-[400px]:text-[23px]
 
-                                md:h-14 md:w-14
+                                sm:text-[31px]
+
+                                md:text-[38px]
+
+                                lg:text-[48px]
                             "
                         >
-                            <img
-                                src="/logo.png"
-                                alt="Company logo"
-                                className="h-full w-full object-contain"
-                            />
+                            <span className="text-[#E73524]">
+                                SRIM
+                            </span>
+
+                            <span className="text-[#777777]">
+                                AN
+                            </span>
                         </div>
 
+                        {/* CONSULTANTS */}
+                        <div
+                            className="
+                                mt-1
+                                whitespace-nowrap
+                                text-[5px]
+                                font-light
+                                tracking-[0.28em]
+                                text-[#E6E4DF]
+
+                                min-[400px]:text-[6px]
+
+                                sm:text-[8px]
+                                sm:tracking-[0.35em]
+
+                                md:text-[10px]
+
+                                lg:text-[12px]
+                                lg:tracking-[0.42em]
+                            "
+                        >
+                            CONSULTANTS
+                        </div>
+
+                    </div>
+
+
+                    {/* ================= COMPANY NAME ================= */}
+                    <div
+                        className="
+                            flex
+                            min-w-0
+                            flex-1
+                            items-center
+                            px-2
+
+                            sm:px-4
+
+                            md:px-5
+                        "
+                    >
                         <h1
                             className="
-                                truncate
-                                text-lg
+                                break-words
+                                text-[11px]
                                 font-medium
-                                tracking-wide
+                                leading-tight
+                                tracking-normal
 
-                                sm:text-2xl
-                                md:text-3xl
+                                min-[400px]:text-xs
+
+                                sm:text-xl
+                                sm:tracking-wide
+
+                                md:text-2xl
+
                                 lg:text-4xl
                             "
                         >
-                            Your Company Name
+                            SRIMAN STRUCTURAL STUDIO
                         </h1>
                     </div>
 
-                    {/* Options */}
-                    <div className="shrink-0">
-                        <div
-                            className="
-                                rounded-full
-                                border border-[#E6E4DF]/30
-                                bg-white/10
-                                px-3 py-1.5
-                                text-sm
-                                font-light
-                                tracking-wide
-                                text-[#E6E4DF]/85
 
-                                sm:px-4 sm:py-2
-                                sm:text-base
+                    {/* ================= MENU BUTTON ================= */}
+                    <div
+                        className="
+                            flex
+                            shrink-0
+                            items-center
+                            justify-center
+                            pr-2
 
-                                md:px-5
-                                md:text-lg
-                            "
+                            sm:pr-4
+
+                            md:pr-5
+                        "
+                    >
+                        <Button
+                            variant="outlined"
+                            aria-label="Open menu"
+                            size="small"
+                            sx={{
+                                minWidth: "auto",
+
+                                width: {
+                                    xs: "38px",
+                                    sm: "44px",
+                                    md: "50px",
+                                },
+
+                                height: {
+                                    xs: "38px",
+                                    sm: "44px",
+                                    md: "50px",
+                                },
+
+                                padding: 0,
+
+                                color: "rgba(230,228,223,0.95)",
+
+                                borderColor:
+                                    "rgba(230,228,223,0.35)",
+
+                                backgroundColor:
+                                    "rgba(255,255,255,0.08)",
+
+                                borderRadius: "9999px",
+
+                                backdropFilter: "blur(4px)",
+
+                                transition:
+                                    "all 0.2s ease",
+
+                                "&:hover": {
+                                    borderColor: "#F2B705",
+
+                                    backgroundColor:
+                                        "rgba(242,183,5,0.15)",
+
+                                    transform:
+                                        "translateY(-1px)",
+                                },
+                            }}
                         >
-                            Options
-                        </div>
+                            <MenuOpenIcon
+                                sx={{
+                                    fontSize: {
+                                        xs: 22,
+                                        sm: 25,
+                                        md: 28,
+                                    },
+                                }}
+                            />
+                        </Button>
                     </div>
+
                 </header>
 
-                {/* Tagline + Button */}
+
+                {/* ================= TAGLINE + CONTACT ================= */}
                 <div
                     className="
                         flex
@@ -151,24 +300,26 @@ const Home = ({ onContactClick = () => {} }) => {
                         text-center
                     "
                 >
-                    {/* Tagline */}
+
+                    {/* ================= TAGLINE ================= */}
                     <p
                         className="
                             flex
-                            max-w-full
-                            flex-wrap
+                            w-full
+                            flex-nowrap
                             items-center
                             justify-center
-                            gap-x-4
-                            gap-y-2
-                            text-4xl
+                            gap-x-2
+                            whitespace-nowrap
+                            text-[17px]
                             font-light
                             leading-tight
-                            tracking-[0.03em]
+                            tracking-[0.01em]
                             drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)]
 
-                            sm:gap-x-5
-                            sm:text-5xl
+                            sm:gap-x-4
+                            sm:text-4xl
+                            sm:tracking-[0.02em]
 
                             md:gap-x-6
                             md:text-6xl
@@ -177,49 +328,73 @@ const Home = ({ onContactClick = () => {} }) => {
                             lg:text-8xl
                         "
                     >
-                        <span>Structures</span>
+
+                        <span>
+                            Structures
+                        </span>
 
                         <span
                             aria-hidden="true"
                             className="
-                                h-2 w-2
+                                h-1.5
+                                w-1.5
+                                shrink-0
                                 rotate-45
                                 bg-[#F2B705]
 
-                                sm:h-2.5 sm:w-2.5
-                                md:h-3 md:w-3
-                                lg:h-3.5 lg:w-3.5
+                                sm:h-2
+                                sm:w-2
+
+                                md:h-3
+                                md:w-3
+
+                                lg:h-3.5
+                                lg:w-3.5
                             "
                         />
 
-                        <span>Strength</span>
+                        <span>
+                            Strength
+                        </span>
 
                         <span
                             aria-hidden="true"
                             className="
-                                h-2 w-2
+                                h-1.5
+                                w-1.5
+                                shrink-0
                                 rotate-45
                                 bg-[#F2B705]
 
-                                sm:h-2.5 sm:w-2.5
-                                md:h-3 md:w-3
-                                lg:h-3.5 lg:w-3.5
+                                sm:h-2
+                                sm:w-2
+
+                                md:h-3
+                                md:w-3
+
+                                lg:h-3.5
+                                lg:w-3.5
                             "
                         />
 
-                        <span>Stability</span>
+                        <span>
+                            Stability
+                        </span>
+
                     </p>
 
-                    {/* Contact */}
+
+                    {/* ================= CONTACT BUTTON ================= */}
                     <button
                         type="button"
                         onClick={onContactClick}
                         className="
-                            mt-6
+                            mt-5
                             rounded-lg
                             bg-[#F2B705]
-                            px-8 py-3
-                            text-lg
+                            px-6
+                            py-2.5
+                            text-base
                             font-medium
                             tracking-wide
                             text-[#0F1418]
@@ -234,6 +409,7 @@ const Home = ({ onContactClick = () => {} }) => {
 
                             sm:mt-7
                             sm:px-10
+                            sm:py-3
                             sm:text-xl
 
                             md:mt-8
@@ -244,8 +420,11 @@ const Home = ({ onContactClick = () => {} }) => {
                     >
                         Contact Us
                     </button>
+
                 </div>
+
             </div>
+
         </section>
     );
 };
