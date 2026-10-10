@@ -1,4 +1,4 @@
-import projects from "./projectdata";
+import projects from "./Projectdata";
 
 const LatestProjects = () => {
     // Open the project page in a new browser tab
